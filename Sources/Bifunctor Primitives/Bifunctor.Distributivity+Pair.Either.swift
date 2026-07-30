@@ -175,7 +175,7 @@ extension Bifunctor.Distributivity {
 
     @inlinable
     @_lifetime(copy pair)
-    internal static func _packLeftSecond<
+    package static func _packLeftSecond<
         A: ~Copyable & ~Escapable,
         B: ~Copyable & ~Escapable,
         C: ~Copyable & ~Escapable
@@ -187,7 +187,7 @@ extension Bifunctor.Distributivity {
 
     @inlinable
     @_lifetime(copy pair)
-    internal static func _packRightSecond<
+    package static func _packRightSecond<
         A: ~Copyable & ~Escapable,
         B: ~Copyable & ~Escapable,
         C: ~Copyable & ~Escapable
@@ -199,7 +199,7 @@ extension Bifunctor.Distributivity {
 
     @inlinable
     @_lifetime(copy pair)
-    internal static func _packLeftFirst<
+    package static func _packLeftFirst<
         A: ~Copyable & ~Escapable,
         B: ~Copyable & ~Escapable,
         C: ~Copyable & ~Escapable
@@ -211,7 +211,7 @@ extension Bifunctor.Distributivity {
 
     @inlinable
     @_lifetime(copy pair)
-    internal static func _packRightFirst<
+    package static func _packRightFirst<
         A: ~Copyable & ~Escapable,
         B: ~Copyable & ~Escapable,
         C: ~Copyable & ~Escapable
