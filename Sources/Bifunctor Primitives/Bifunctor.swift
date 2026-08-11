@@ -35,5 +35,5 @@
 /// concrete `Pair.map(first:second:)` and `Either.map(left:right:)` shapes.
 /// Concrete operations at known type-constructor pairs are the right Swift
 /// shape until the language acquires the necessary expressivity. See
-/// `Research/bifunctor-primitives-package-home.md` for the full rationale.
+/// [bifunctor-primitives-package-home.md](https://github.com/swift-institute/Research/blob/main/Packages/swift-bifunctor-primitives/bifunctor-primitives-package-home.md) for the full rationale.
 public enum Bifunctor: Sendable {}
