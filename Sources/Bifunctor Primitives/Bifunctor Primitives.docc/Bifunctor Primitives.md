@@ -55,7 +55,7 @@ types. A marker-only protocol carries no operations; an endo-`bimap` protocol
 is strictly weaker than the existing concrete `Pair.map(first:second:)` and
 `Either.map(left:right:)`. Concrete operations at known type-constructor
 pairs are the right Swift shape today. See
-`Research/bifunctor-primitives-package-home.md` for the rationale.
+[bifunctor-primitives-package-home.md](https://github.com/swift-institute/Research/blob/main/Packages/swift-bifunctor-primitives/bifunctor-primitives-package-home.md) for the rationale.
 
 ## Topics
 
