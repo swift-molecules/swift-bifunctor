@@ -1,13 +1,3 @@
-// Bifunctor.Distributivity Tests.swift
-//
-// Distributivity iso between Pair (binary product) and Either (binary
-// coproduct): A × (B + C) ≅ (A × B) + (A × C).
-//
-// Tests cover both forward overloads (`distribute`), both inverse
-// overloads (`factor`), and the round-trip identities that witness the
-// iso. Pair and Either are checked for equality using their stdlib
-// `Equatable` conformances (Copyable arms).
-
 import Testing
 
 @testable import Bifunctor_Primitives
@@ -20,8 +10,6 @@ extension Bifunctor.Distributivity {
         @Suite struct Integration {}
     }
 }
-
-// MARK: - Unit: distribute (Either-in-second)
 
 extension Bifunctor.Distributivity.Test.Unit {
 
@@ -42,8 +30,6 @@ extension Bifunctor.Distributivity.Test.Unit {
     }
 }
 
-// MARK: - Unit: distribute (Either-in-first)
-
 extension Bifunctor.Distributivity.Test.Unit {
 
     @Test
@@ -62,8 +48,6 @@ extension Bifunctor.Distributivity.Test.Unit {
         #expect(result == expected)
     }
 }
-
-// MARK: - Unit: factor (inverse of Either-in-second)
 
 extension Bifunctor.Distributivity.Test.Unit {
 
@@ -84,8 +68,6 @@ extension Bifunctor.Distributivity.Test.Unit {
     }
 }
 
-// MARK: - Unit: factor (inverse of Either-in-first)
-
 extension Bifunctor.Distributivity.Test.Unit {
 
     @Test
@@ -104,8 +86,6 @@ extension Bifunctor.Distributivity.Test.Unit {
         #expect(result == expected)
     }
 }
-
-// MARK: - Integration: round-trip identity (factor ∘ distribute = id)
 
 extension Bifunctor.Distributivity.Test.Integration {
 
@@ -146,8 +126,6 @@ extension Bifunctor.Distributivity.Test.Integration {
     }
 }
 
-// MARK: - Integration: round-trip identity (distribute ∘ factor = id)
-
 extension Bifunctor.Distributivity.Test.Integration {
 
     @Test
@@ -186,8 +164,6 @@ extension Bifunctor.Distributivity.Test.Integration {
         #expect(roundTrip == original)
     }
 }
-
-// MARK: - Edge Case: Never elimination
 
 extension Bifunctor.Distributivity.Test.`Edge Case` {
 
