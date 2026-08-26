@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-bifunctor-primitives",
+    name: "swift-bifunctor",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,44 +13,44 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Bifunctor Primitives",
-            targets: ["Bifunctor Primitives"]
+            name: "Bifunctor",
+            targets: ["Bifunctor"]
         ),
         .library(
-            name: "Bifunctor Primitives Test Support",
-            targets: ["Bifunctor Primitives Test Support"]
+            name: "Bifunctor Test Support",
+            targets: ["Bifunctor Test Support"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-pair-primitives.git",
+            url: "https://github.com/swift-molecules/swift-pair.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-either-primitives.git",
+            url: "https://github.com/swift-molecules/swift-either.git",
             branch: "main"
         ),
     ],
     targets: [
         .target(
-            name: "Bifunctor Primitives",
+            name: "Bifunctor",
             dependencies: [
-                .product(name: "Pair Primitives", package: "swift-pair-primitives"),
-                .product(name: "Either Primitives", package: "swift-either-primitives"),
+                .product(name: "Pair", package: "swift-pair"),
+                .product(name: "Either", package: "swift-either"),
             ]
         ),
         .target(
-            name: "Bifunctor Primitives Test Support",
+            name: "Bifunctor Test Support",
             dependencies: [
-                "Bifunctor Primitives"
+                "Bifunctor"
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Bifunctor Primitives Tests",
+            name: "Bifunctor Tests",
             dependencies: [
-                "Bifunctor Primitives",
-                "Bifunctor Primitives Test Support",
+                "Bifunctor",
+                "Bifunctor Test Support",
             ]
         ),
     ],

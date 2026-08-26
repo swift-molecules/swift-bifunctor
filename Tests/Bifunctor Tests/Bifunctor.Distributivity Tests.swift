@@ -1,6 +1,6 @@
 import Testing
 
-@testable import Bifunctor_Primitives
+@testable import Bifunctor
 
 extension Bifunctor.Distributivity {
     @Suite

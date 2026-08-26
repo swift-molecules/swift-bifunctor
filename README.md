@@ -1,4 +1,4 @@
-# Bifunctor Primitives
+# Bifunctor
 
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
@@ -11,7 +11,7 @@ Categorical bifunctor structure for Swift — the distributivity isomorphism bet
 When one arm of a product is itself a choice, you often want to push the choice outward: turn "a value **and** (this **or** that)" into "(value **and** this) **or** (value **and** that)". That is exactly the algebraic identity `A × (B + C) ≅ (A × B) + (A × C)`. This package realizes both directions of the iso for `Pair` (binary product) and `Either` (binary coproduct), so the two encodings convert losslessly into each other.
 
 ```swift
-import Bifunctor_Primitives
+import Bifunctor
 
 // Forward — distribute: Pair<A, Either<B, C>>  →  Either<Pair<A, B>, Pair<A, C>>
 let pair: Pair<Int, Either<String, Bool>> = Pair(42, .left("hello"))
@@ -41,7 +41,7 @@ All four operate over `~Copyable & ~Escapable` arms: each value flows through ex
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-primitives/swift-bifunctor-primitives.git", branch: "main")
+    .package(url: "https://github.com/swift-molecules/swift-bifunctor.git", branch: "main")
 ]
 ```
 
@@ -49,7 +49,7 @@ dependencies: [
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Bifunctor Primitives", package: "swift-bifunctor-primitives"),
+        .product(name: "Bifunctor", package: "swift-bifunctor"),
     ]
 )
 ```
@@ -64,8 +64,8 @@ Two library products. Depends only on the `Pair` and `Either` type-constructor p
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Bifunctor Primitives` | `Sources/Bifunctor Primitives/` | The `Bifunctor` namespace and `Bifunctor.Distributivity`: the distributivity iso `A × (B + C) ≅ (A × B) + (A × C)` for `Pair × Either`, in both directions (`distribute` and `factor`). Re-exports `Pair_Primitives` and `Either_Primitives`. |
-| `Bifunctor Primitives Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
+| `Bifunctor` | `Sources/Bifunctor/` | The `Bifunctor` namespace and `Bifunctor.Distributivity`: the distributivity iso `A × (B + C) ≅ (A × B) + (A × C)` for `Pair × Either`, in both directions (`distribute` and `factor`). Re-exports `Pair` and `Either`. |
+| `Bifunctor Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
 
 Foundation-free.
 
