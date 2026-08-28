@@ -1,3 +1,7 @@
+import Either
+import Either_Equation
+import Pair
+import Pair_Equation
 import Testing
 
 @testable import Bifunctor

@@ -54,13 +54,13 @@ dependencies: [
 )
 ```
 
-Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 (or the matching Linux / Windows toolchain).
+Requires Swift 6.4 and macOS 27 / iOS 27 / tvOS 27 / watchOS 27 / visionOS 27 (or the matching Linux / Windows toolchain).
 
 ---
 
 ## Architecture
 
-Two library products. Depends only on the `Pair` and `Either` type-constructor primitives.
+Two library products. Depends only on the `Pair` and `Either` type-constructor atoms at `swift-atoms/swift-pair` and `swift-atoms/swift-either`.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
@@ -75,7 +75,7 @@ Foundation-free.
 
 | Platform | Status |
 |----------|--------|
-| macOS 26 | Full support |
+| macOS 27 | Full support |
 | Linux | Full support |
 | Windows | Full support |
 | iOS / tvOS / watchOS / visionOS | Supported |

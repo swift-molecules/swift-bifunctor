@@ -1,3 +1,6 @@
+public import Either
+public import Pair
+
 extension Bifunctor.Distributivity {
 
     @inlinable
