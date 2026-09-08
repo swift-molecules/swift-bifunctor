@@ -22,20 +22,14 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-atoms/swift-equation.git", branch: "main"),
+
         .package(
             url: "https://github.com/swift-atoms/swift-pair.git",
             branch: "main"
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-either.git",
-            branch: "main"
-        ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-pair-equation.git",
-            branch: "main"
-        ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-either-equation.git",
             branch: "main"
         ),
     ],
@@ -57,12 +51,12 @@ let package = Package(
         .testTarget(
             name: "Bifunctor Tests",
             dependencies: [
+                .product(name: "Equation", package: "swift-equation"),
+
                 "Bifunctor",
                 "Bifunctor Test Support",
                 .product(name: "Pair", package: "swift-pair"),
                 .product(name: "Either", package: "swift-either"),
-                .product(name: "Pair Equation", package: "swift-pair-equation"),
-                .product(name: "Either Equation", package: "swift-either-equation"),
             ]
         ),
     ],
