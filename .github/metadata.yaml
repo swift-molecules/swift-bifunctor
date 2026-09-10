@@ -1,4 +1,3 @@
-# .github/metadata.yaml
 description: "Categorical bifunctor structure for Swift — distributivity isos between Pair (binary product) and Either (binary coproduct)."
 topics:
   - primitives
